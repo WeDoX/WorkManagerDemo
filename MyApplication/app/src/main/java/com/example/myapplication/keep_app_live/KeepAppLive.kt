@@ -9,6 +9,7 @@ import java.util.concurrent.TimeUnit
 object KeepAppLive {
 
     fun keepAppLive(context: Context) {
+        ResetRule.handleInit(context)
         // 取消所有任务
         WorkManager.getInstance(context).cancelAllWork()
         //

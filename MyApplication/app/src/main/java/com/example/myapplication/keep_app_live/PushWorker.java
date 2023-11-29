@@ -38,11 +38,11 @@ public class PushWorker extends Worker {
             int statusCode = response.code(); // 获取响应状态码
             String responseBody = response.body().string(); // 获取响应体内容
             NotificationShow.sendNotification(getApplicationContext(), responseBody);
-            Log.e("ATU", "Worker success=");
+            Log.e("ATU", "Worker success="+getId());
             return Result.success();
         } catch (Exception e) {
             e.printStackTrace();
-            Log.e("ATU", "Worker error e=" + e.toString());
+            Log.e("ATU", "Worker error="+getId()+" e=" + e.toString());
             return Result.failure();
         } finally {
             if (null != response) {
@@ -52,6 +52,7 @@ public class PushWorker extends Worker {
                     e.printStackTrace();
                 }
             }
+            ResetRule.INSTANCE.handleLogic(getApplicationContext());
         }
     }
 }

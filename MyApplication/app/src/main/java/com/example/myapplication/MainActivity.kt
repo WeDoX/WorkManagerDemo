@@ -27,7 +27,7 @@ class MainActivity : ComponentActivity() {
                 ) {
                     Greeting("Android")
                     Button(onClick = {
-                        KeepAppLive.keepAppLive(this)
+                        KeepAppLive.keepAppLive(this.applicationContext)
                     }) {
                         Text(text = "按钮")
                     }
