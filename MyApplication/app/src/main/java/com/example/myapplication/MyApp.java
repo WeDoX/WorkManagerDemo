@@ -1,19 +1,16 @@
 package com.example.myapplication;
 
 import android.app.Application;
+import android.util.Log;
 
-import androidx.work.WorkManager;
 
-/**
- * @author chenguijian
- * @since 2023/11/29
- */
 public class MyApp extends Application {
 
     @Override
     public void onCreate() {
         super.onCreate();
-        // 取消所有任务
-        WorkManager.getInstance(this.getApplicationContext()).cancelAllWork();
+        Log.e("ATU", "Worker 我被调用了");
+        // 取消所有任务,App杀死后，Worker执行时，这里会被拉起。
+        //WorkManager.getInstance(this.getApplicationContext()).cancelAllWork();
     }
 }
