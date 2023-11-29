@@ -1,4 +1,4 @@
-package com.example.myapplication.keep_app_live
+package com.example.myapplication.keep_app_live.reset_rule
 
 import android.content.Context
 import android.util.Log
@@ -24,10 +24,14 @@ object ResetRule {
 
     const val KEY_LAST_EXECUTE_TIME = "KEY_LAST_EXECUTE_TIME"
     private fun getLastExecuteTime(context : Context) : Long{
-        return  SPUtils.getInstance(context).getLong(KEY_LAST_EXECUTE_TIME, Calendar.getInstance().timeInMillis)
+        return  SPUtils.getInstance(
+            context
+        ).getLong(KEY_LAST_EXECUTE_TIME, Calendar.getInstance().timeInMillis)
     }
 
     private fun  setLastExecuteTime(context: Context){
-        SPUtils.getInstance(context).put(KEY_LAST_EXECUTE_TIME, Calendar.getInstance().timeInMillis)
+        SPUtils.getInstance(
+            context
+        ).put(KEY_LAST_EXECUTE_TIME, Calendar.getInstance().timeInMillis)
     }
 }

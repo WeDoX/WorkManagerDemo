@@ -1,4 +1,4 @@
-package com.example.myapplication.keep_app_live;
+package com.example.myapplication.keep_app_live.reset_rule;
 
 import android.content.Context;
 import android.content.SharedPreferences;
