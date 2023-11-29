@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.myapplication.keep_app_live;
 
 import android.content.Context;
 import android.util.Log;
@@ -7,14 +7,16 @@ import androidx.annotation.NonNull;
 import androidx.work.Worker;
 import androidx.work.WorkerParameters;
 
+import com.example.myapplication.NotificationShow;
+
 import java.util.concurrent.TimeUnit;
 
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
-public class UploadWorker extends Worker {
-    public UploadWorker(@NonNull Context context, @NonNull WorkerParameters params) {
+public class PushWorker extends Worker {
+    public PushWorker(@NonNull Context context, @NonNull WorkerParameters params) {
         super(context, params);
     }
 
